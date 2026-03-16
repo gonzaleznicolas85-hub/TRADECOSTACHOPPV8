@@ -639,55 +639,57 @@
     clearSignatureBtn.addEventListener("click", clearSignature);
     window.addEventListener("resize", resizeCanvas);
 
+    
     function getPayload() {
-      return {
-        comodatoNumero: value("comodatoNumero"),
-        fecha: value("fecha"),
-        tecnico: value("tecnico"),
-        distribuidor: value("distribuidor"),
-        codCliente: value("codCliente"),
-        cuit: value("cuit"),
-        nombreFantasia: value("nombreFantasia"),
-        razonSocial: value("razonSocial"),
-        domicilio: value("domicilio"),
-        localidad: value("localidad"),
+  return {
+    comodatoNumero: value("comodatoNumero"),
+    fecha: value("fecha"),
+    tecnico: value("tecnico"),
+    distribuidor: value("distribuidor"),
+    codCliente: value("codCliente"),
+    cuit: value("cuit"),
+    nombreFantasia: value("nombreFantasia"),
+    razonSocial: value("razonSocial"),
+    domicilio: value("domicilio"),
+    localidad: value("localidad"),
 
-        marca: value("marca"),
-        modelo: value("modelo"),
-        activoFijo: value("activoFijo"),
-        serie: value("serie"),
+    marca: value("marca"),
+    modelo: value("modelo"),
+    activoFijo: value("activoFijo"),
+    serie: value("serie"),
 
-        regCornelius: numberValue("regCornelius"),
-        regMafridis: numberValue("regMafridis"),
-        llaveMixta: numberValue("llaveMixta"),
-        cabezalMM: numberValue("cabezalMM"),
-        mangueraCerveza: numberValue("mangueraCerveza"),
-        mangueraPython: numberValue("mangueraPython"),
-        canillaNiquelada: numberValue("canillaNiquelada"),
-        canillaAgua: numberValue("canillaAgua"),
-        transformador: numberValue("transformador"),
-        separadoresCanilla: numberValue("separadoresCanilla"),
-        conectorVasera: numberValue("conectorVasera"),
-        cantPicos: numberValue("cantPicos"),
-        medallones: numberValue("medallones"),
-        tuboGas: numberValue("tuboGas"),
-        vaseraRinser: numberValue("vaseraRinser"),
-        rinser: numberValue("rinser"),
-        mangueraDesague: numberValue("mangueraDesague"),
+    regCornelius: numberValue("regCornelius"),
+    regMafridis: numberValue("regMafridis"),
+    llaveMixta: numberValue("llaveMixta"),
+    cabezalMM: numberValue("cabezalMM"),
+    mangueraCerveza: numberValue("mangueraCerveza"),
+    mangueraPython: numberValue("mangueraPython"),
+    canillaNiquelada: numberValue("canillaNiquelada"),
+    canillaAgua: numberValue("canillaAgua"),
+    transformador: numberValue("transformador"),
+    separadoresCanilla: numberValue("separadoresCanilla"),
+    conectorVasera: numberValue("conectorVasera"),
+    cantPicos: numberValue("cantPicos"),
+    medallones: numberValue("medallones"),
+    tuboGas: numberValue("tuboGas"),
+    vaseraRinser: numberValue("vaseraRinser"),
+    rinser: numberValue("rinser"),
+    mangueraDesague: numberValue("mangueraDesague"),
 
-        handle: value("handle"),
-        celli: value("celli"),
-        vasera: value("vasera"),
-        pilon: value("pilon"),
-        pilonOtros: value("pilonOtros"),
-        cabezal: value("cabezal"),
-        descripcion: value("descripcion"),
+    handle: value("handle"),
+    celli: value("celli"),
+    vasera: value("vasera"),
+    pilon: value("pilon"),
+    pilonOtros: value("pilonOtros"),
+    cabezal: value("cabezal"),
+    descripcion: value("descripcion"),
 
-        aclaracion: value("aclaracion"),
-        dni: value("dni"),
-        firmaDataUrl: hasSignature ? canvas.toDataURL("image/png") : ""
-      };
-    }
+    aclaracion: value("aclaracion"),
+    dni: value("dni"),
+    firmaDataUrl: hasSignature ? canvas.toDataURL("image/png") : "",
+    aceptaTerminos: acceptTerms.checked
+  };
+}
 
     function validateBeforeSend(payload) {
       if (!payload.fecha) return "La fecha es obligatoria.";
